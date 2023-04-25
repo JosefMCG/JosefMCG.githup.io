@@ -1,0 +1,657 @@
+/*--------------------------------------------TIPOGRAFIA-----------------------------------------------------------*/
+@font-face {
+    font-family: 'Letra_1';
+    src: url('AmaticSC-Bold.ttfz');
+}
+
+@font-face {
+    font-family: 'Letra_2';
+    src: url('DMSerifDisplay-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Letra_3';
+    src: url('SpaceMono-Regular.ttf');
+}
+/*----------------------------------------NO SE------------------------------------------------------*/
+h1 {
+	font-family: Letra_2, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+	font-family: Letra_1, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h3 {
+	font-family: Letra_3, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.five {
+  border-style: solid;
+  border-width: 1px;
+}
+
+header {
+	background-color: #fff;
+	color: #333;
+	padding: 20px;
+}
+
+nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: space-around;
+}
+
+nav li {
+	margin: 0 10px;
+}
+
+nav a {
+	color: #000;
+	text-decoration: none;
+}
+
+body {
+  font-family: Letra_2, sans-serif;
+  background: #fff;
+  color: white;
+  text-align: center;
+}
+/*------------------------------------MARCOS-----------------------*/
+.marco1 {
+   padding:10px;
+   background-color: #ffffff;
+   width: 400px;
+   border: 1px solid #ffffff;
+}
+.marco1 IMG{
+   border: 1px solid #ffffff;
+}
+
+.marco2 {
+   padding:8px;
+   background-color: #000000;
+   width: 400px;
+   border: 1px solid #999999;
+}
+.marco2 IMG{
+   border: 1px solid #000000;
+}
+
+.marco3 {
+   padding:8px;
+   background-color: #fff;
+   width: 800px;
+   border: 5px solid #cccccc;
+}
+.marco3 IMG{
+   border: 1px solid #999999;
+}
+
+.marco4 {
+   padding:1px;
+   background-color: #ffffff;
+   width: 200px;
+   border: 1px solid #ffffff;
+}
+.marco4 IMG{
+   border: 1px solid #ffffff;
+}
+
+.marco5 {
+   padding:8px;
+   background-color: #fff;
+   width: 775px;
+   border: 5px solid #cccccc;
+}
+.marco5 IMG{
+   border: 1px solid #999999;
+}
+/*-------------------------------SLIDE---------------------------------------*/
+#slider {
+   margin: 0 auto;
+   width: 400px;
+   max-width: 100%;
+   text-align: center;
+}
+#slider input[type=radio] {
+   display: none;
+}
+#slider label {
+   cursor:pointer;
+   text-decoration: none;
+}
+#slides {
+   padding: 10px;
+   border: 3px solid #ccc;
+   background: #fff;
+   position: relative;
+   z-index: 1;
+}
+#overflow {
+   width: 100%;
+   overflow: hidden;
+}
+#slide1:checked ~ #slides .inner {
+   margin-left: 4%;
+}
+#slide2:checked ~ #slides .inner {
+   margin-left: -96.5%;
+}
+#slide3:checked ~ #slides .inner {
+   margin-left: -196.5%;
+}
+#slide4:checked ~ #slides .inner {
+   margin-left: -300%;
+}
+#slides .inner {
+   transition: margin-left 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+   width: 400%;
+   line-height: 0;
+   height: 400px;
+}
+#slides .slide {
+   width: 25%;
+   float:left;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100%;
+   color: #fff;
+}
+#slides .slide_1 {
+   background: #00171F;
+}
+#slides .slide_2 {
+   background: #003459;
+}
+#slides .slide_3 {
+   background: #007EA7;
+}
+#slides .slide_4 {
+   background: #00A8E8;
+}
+#controls {
+   margin: -180px 0 0 0;
+   width: 100%;
+   height: 50px;
+   z-index: 3;
+   position: relative;
+}
+#controls label {
+   transition: opacity 0.2s ease-out;
+   display: none;
+   width: 50px;
+   height: 50px;
+   opacity: .4;
+}
+#controls label:hover {
+   opacity: 1;
+}
+#slide1:checked ~ #controls label:nth-child(2),
+#slide2:checked ~ #controls label:nth-child(3),
+#slide3:checked ~ #controls label:nth-child(4),
+#slide4:checked ~ #controls label:nth-child(1) {
+   background-size: cover(Imagen_1.jpg); 
+   float:right;
+   margin: 0 -50px 0 0;
+   display: block;
+}
+#slide1:checked ~ #controls label:nth-last-child(1),
+#slide2:checked ~ #controls label:nth-last-child(4),
+#slide3:checked ~ #controls label:nth-last-child(3),
+#slide4:checked ~ #controls label:nth-last-child(2){
+    background-size: cover(Imagen_1.jpg);
+    float: left; 
+    margin: 0 0 0 -50px;
+    display: block;
+}
+#bullets {
+   margin: 150px 0 0;
+   text-align: center;
+}
+#bullets label {
+   display: inline-block;
+   width: 10px;
+   height: 10px;
+   border-radius:100%;
+   background: #ccc;
+   margin: 0 10px;
+}
+#slide1:checked ~ #bullets label:nth-child(1),
+#slide2:checked ~ #bullets label:nth-child(2),
+#slide3:checked ~ #bullets label:nth-child(3),
+#slide4:checked ~ #bullets label:nth-child(4) {
+   background: #444;
+}
+@media screen and (max-width: 900px) {
+   #slide1:checked ~ #controls label:nth-child(2),
+   #slide2:checked ~ #controls label:nth-child(3),
+   #slide3:checked ~ #controls label:nth-child(4),
+   #slide4:checked ~ #controls label:nth-child(1),
+   #slide1:checked ~ #controls label:nth-last-child(2),
+   #slide2:checked ~ #controls label:nth-last-child(3),
+   #slide3:checked ~ #controls label:nth-last-child(4),
+   #slide4:checked ~ #controls label:nth-last-child(1) {
+      margin: 0;
+   }
+   #slides {
+      max-width: calc(100% - 140px);
+      margin: 0 auto;
+   }
+}
+/*------------------------------------Imagenes pequeñas------------------------------------*/
+#caja {
+   margin: 0 auto;
+   width: 220px;
+   max-width: 100%;
+   text-align: center;
+}
+
+#cajas {
+   padding: 5px;
+   border: 3px solid #ccc;
+   background: #fff;
+}
+
+#cajas .tamano {
+   width: 400%;
+   line-height: 0;
+   height: 205px;
+}
+
+#cajas .texto {
+   width: 24.8%;
+   float:left;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100%;
+   color: #000000;
+}
+
+#cajas .caja_1 {
+   background: #ffffff;
+}
+/*------------------------------------Imagenes Grandes------------------------------------*/
+#caja2 {
+   margin: 0 auto;
+   width: 260px;
+   max-width: 100%;
+   text-align: center;
+}
+
+#cajas2 {
+   padding: 5px;
+   border: 3px solid #ccc;
+   background: #fff;
+}
+
+#cajas2 .tamano2 {
+   width: 400%;
+   line-height: 0;
+   height: 240px;
+}
+
+#cajas2 .texto2 {
+   width: 20.8%;
+   float:left;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100%;
+   color: #000000;
+}
+
+#cajas2 .caja_2 {
+   background: #ffffff;
+}
+
+/*----------------------------------------------------Cajas de Textos-----------------------------------*/
+#caja1 {
+   margin: 0 auto;
+   width: 400px;
+   max-width: 100%;
+   text-align: center;
+}
+
+#cajas1 {
+   padding: 5px;
+   border: 3px solid #ccc;
+   background: #fff;
+}
+
+#cajas1 .tamano1 {
+   width: 400%;
+   line-height: 0;
+   height: 400px;
+}
+
+#cajas1 .texto1 {
+   width: 25%;
+   float:left;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100%;
+   color: #000000;
+}
+
+#cajas1 .caja_1 {
+   background: #ffffff;
+}
+/*------------------------------------Imagenes extraGrandes--------------Marco 1----------------------*/
+#caja3 {
+   margin: 0 auto;
+   width: 300px;
+   max-width: 100%;
+   text-align: center;
+}
+
+#cajas3 {
+   padding: 5px;
+   border: 3px solid #ccc;
+   background: #fff;
+}
+
+#cajas3 .tamano3 {
+   width: 400%;
+   line-height: 0;
+   height: 240px;
+}
+
+#cajas3 .texto3 {
+   width: 25%;
+   float:left;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100%;
+   color: #000000;
+}
+
+#cajas3 .caja_3 {
+   background: #ffffff;
+}
+/*----------------------------------------------------IMAGEN CIRCULAR-----------------------------------*/
+.circular--landscape {
+  display: inline-block;
+  position: relative;
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.circular--landscape img {
+  width: auto;
+  height: 100%;
+  margin-left: -10px;
+}
+/*----------------------------------------------------CENTRO-----------------------------------*/
+.center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+/*----------------------------------------E&A 1-----------------------------------------------*/
+#sliderEA1 {
+   margin: 10 auto; /*separacion entre marcos*/
+   width: 400px; /*Ancho*/
+   max-width: 100%;
+   text-align: center;
+}
+
+#slidesEA1 {
+   padding: 20px; /*ancho de marco medio*/
+   border: 30px solid #ccc; /*Ancho de marco exterior*/
+   background: #fff; /*Color de marco medio*/
+   position: relative;
+}
+
+#slidesEA1 .innerEA1 {
+   width: 40%;
+   line-height: 0;
+   height: 300px;/*Largo*/
+}
+
+#slidesEA1 .slideEA1 {
+   width: 250%;/*Ancho de marco interno*/
+   float:left;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100%;/*Alto de cuadro interno*/
+   color: #ffffff;/*Color letra*/
+}
+
+#slidesEA1 .slide_1EA1 {
+   background: #9D0A1D;
+}
+/*----------------------------------------E&A 2-----------------------------------------------*/
+#sliderEA2 {
+   margin: 10 auto; /*separacion entre marcos*/
+   width: 400px; /*Ancho*/
+   max-width: 100%;
+   text-align: center;
+}
+
+#slidesEA2 {
+   padding: 20px; /*ancho de marco medio*/
+   border: 30px solid #ccc; /*Ancho de marco exterior*/
+   background: #fff; /*Color de marco medio*/
+   position: relative;
+}
+
+#slidesEA2 .innerEA2 {
+   width: 40%;
+   line-height: 0;
+   height: 300px;/*Largo*/
+}
+
+#slidesEA2 .slideEA2 {
+   width: 250%;/*Ancho de marco interno*/
+   float:left;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100%;/*Alto de cuadro interno*/
+   color: #ffffff;/*Color letra*/
+}
+
+#slidesEA2 .slide_1EA2 {
+   background: #4E4848;
+}
+/*----------------------------------------E&A 3-----------------------------------------------*/
+#sliderEA3 {
+   margin: 10 auto; /*separacion entre marcos*/
+   width: 400px; /*Ancho*/
+   max-width: 100%;
+   text-align: center;
+}
+
+#slidesEA3 {
+   padding: 20px; /*ancho de marco medio*/
+   border: 30px solid #ccc; /*Ancho de marco exterior*/
+   background: #fff; /*Color de marco medio*/
+   position: relative;
+}
+
+#slidesEA3 .innerEA3 {
+   width: 40%;
+   line-height: 0;
+   height: 300px;/*Largo*/
+}
+
+#slidesEA3 .slideEA3 {
+   width: 250%;/*Ancho de marco interno*/
+   float:left;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100%;/*Alto de cuadro interno*/
+   color: #ffffff;/*Color letra*/
+}
+
+#slidesEA3 .slide_1EA3 {
+   background: #273E46;
+}
+/*----------------------------------------E&A 4-----------------------------------------------*/
+#sliderEA4 {
+   margin: 10 auto; /*separacion entre marcos*/
+   width: 400px; /*Ancho*/
+   max-width: 100%;
+   text-align: center;
+}
+
+#slidesEA4 {
+   padding: 20px; /*ancho de marco medio*/
+   border: 30px solid #ccc; /*Ancho de marco exterior*/
+   background: #fff; /*Color de marco medio*/
+   position: relative;
+}
+
+#slidesEA4 .innerEA4 {
+   width: 40%;
+   line-height: 0;
+   height: 300px;/*Largo*/
+}
+
+#slidesEA4 .slideEA4 {
+   width: 250%;/*Ancho de marco interno*/
+   float:left;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100%;/*Alto de cuadro interno*/
+   color: #ffffff;/*Color letra*/
+}
+
+#slidesEA4 .slide_1EA4 {
+   background: #F2CA87;
+}
+/*----------------------------------------E&A 5-----------------------------------------------*/
+#sliderEA5 {
+   margin: 10 auto; /*separacion entre marcos*/
+   width: 400px; /*Ancho*/
+   max-width: 100%;
+   text-align: center;
+}
+
+#slidesEA5 {
+   padding: 20px; /*ancho de marco medio*/
+   border: 30px solid #ccc; /*Ancho de marco exterior*/
+   background: #fff; /*Color de marco medio*/
+   position: relative;
+}
+
+#slidesEA5 .innerEA5 {
+   width: 40%;
+   line-height: 0;
+   height: 300px;/*Largo*/
+}
+
+#slidesEA5 .slideEA5 {
+   width: 250%;/*Ancho de marco interno*/
+   float:left;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100%;/*Alto de cuadro interno*/
+   color: #ffffff;/*Color letra*/
+}
+
+#slidesEA5 .slide_1EA5 {
+   background: #58060C;
+}
+/*----------------------------------------E&A 6-----------------------------------------------*/
+#sliderEA6 {
+   margin: 10 auto; /*separacion entre marcos*/
+   width: 400px; /*Ancho*/
+   max-width: 100%;
+   text-align: center;
+}
+
+#slidesEA6 {
+   padding: 20px; /*ancho de marco medio*/
+   border: 30px solid #ccc; /*Ancho de marco exterior*/
+   background: #fff; /*Color de marco medio*/
+   position: relative;
+}
+
+#slidesEA6 .innerEA6 {
+   width: 40%;
+   line-height: 0;
+   height: 300px;/*Largo*/
+}
+
+#slidesEA6 .slideEA6 {
+   width: 250%;/*Ancho de marco interno*/
+   float:left;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100%;/*Alto de cuadro interno*/
+   color: #ffffff;/*Color letra*/
+}
+
+#slidesEA6 .slide_1EA6 {
+   background: #010101;
+}
+/*----------------------------------------Cuadros de texto pequeños-----------------------------------------------*/
+
+#sliderEA7 {
+   margin: 10 auto; /*separacion entre marcos*/
+   width: 400px; /*Ancho*/
+   max-width: 100%;
+   text-align: center;
+}
+
+#slidesEA7 {
+   padding: 20px; /*ancho de marco medio*/
+   border: 30px solid #ccc; /*Ancho de marco exterior*/
+   background: #fff; /*Color de marco medio*/
+   position: relative;
+}
+
+#slidesEA7 .innerEA7 {
+   width: 40%;
+   line-height: 0;
+   height: 300px;/*Largo*/
+}
+
+#slidesEA7 .slideEA7 {
+   width: 250%;/*Ancho de marco interno*/
+   float:left;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100%;/*Alto de cuadro interno*/
+   color: #010101;/*Color letra*/
+}
+
+#slidesEA7 .slide_1EA7 {
+   background: #ffffff;
+}
+
+/*----------------------------------------Tabla centrada---------------------------------------------------------*/
+table {
+	margin: 0 auto;
+}
+/*-------------------------------------------Mantener encabezado fijo------------------------------------------------------*/
+#mi-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
